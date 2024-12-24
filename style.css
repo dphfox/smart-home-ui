@@ -98,6 +98,8 @@ body > nav {
 nav > button {
 	font: inherit;
 	border: none;
+	background: none;
+	color: inherit;
 }
 
 body > main {
@@ -162,8 +164,10 @@ body > main > article {
 @keyframes article-on-main-scroll {
 	0% {
 		opacity: 0;
+		height: calc(100% - 8rem);
 	}
 	100% {
 		opacity: 1;
+		height: calc(100%);
 	}
 }

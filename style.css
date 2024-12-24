@@ -5,19 +5,19 @@
 }
 
 :root {
-	--pal-0: #d3e6d9;
-	--pal-0-5: #c4e3d0;
-	--pal-1: #b5e1c8;
-	--pal-1-5: #a6dec0;
-	--pal-2: #97dbba;
-	--pal-3: #7cd1af;
-	--pal-4: #63c4a3;
-	--pal-5: #4eb195;
-	--pal-6: #3c9983;
-	--pal-7: #2c7c6b;
-	--pal-8: #1e5b4f;
-	--pal-9: #123932;
-	--pal-10: #081917;
+	--pal-0: #fffffb;
+	--pal-0-5: #fdfbee;
+	--pal-1: #faf6e1;
+	--pal-1-5: #f7efd3;
+	--pal-2: #f3e7c6;
+	--pal-3: #e8d2ac;
+	--pal-4: #d9ba94;
+	--pal-5: #c49f7c;
+	--pal-6: #a98365;
+	--pal-7: #88654d;
+	--pal-8: #634736;
+	--pal-9: #3d2b21;
+	--pal-10: #19120d;
 
 	--atop-b: var(--pal-10);
 	--atop-0: var(--pal-10);
@@ -37,19 +37,19 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--pal-0: #081a17;
-		--pal-0-5: #0c2722;
-		--pal-1: #11352e;
-		--pal-1-5: #18453b;
-		--pal-2: #1e5449;
-		--pal-3: #307b69;
-		--pal-4: #429d85;
-		--pal-5: #50ae92;
-		--pal-6: #5ebb9c;
-		--pal-7: #77c6a6;
-		--pal-8: #98d1b4;
-		--pal-9: #b6dbc5;
-		--pal-10: #d3e6d9;
+		--pal-0: #1a120d;
+		--pal-0-5: #291d16;
+		--pal-1: #38291f;
+		--pal-1-5: #4a362a;
+		--pal-2: #5c4434;
+		--pal-3: #886951;
+		--pal-4: #ad8a6b;
+		--pal-5: #c19e7c;
+		--pal-6: #cfb18c;
+		--pal-7: #dcc8a5;
+		--pal-8: #e8dfc3;
+		--pal-9: #f4f1e0;
+		--pal-10: #fffffb;
 	
 		--atop-0: var(--pal-10);
 		--atop-0-5: var(--pal-10);
@@ -91,15 +91,54 @@ body > nav {
 	grid-area: nav;
 	display: flex;
 	flex-direction: row;
-	gap: 1rem;
-	padding: 1rem;
-}
+	padding: 0.5rem;
+	gap: 0.5rem;
 
-nav > button {
-	font: inherit;
-	border: none;
-	background: none;
-	color: inherit;
+	& > button {
+		font: inherit;
+		border: none;
+		background: none;
+		color: inherit;
+
+		padding: 0 0.5rem;
+		border-radius: 2rem;
+		height: 2rem;
+
+		cursor: pointer;
+
+		&:first-of-type {
+			background: var(--pal-3);
+			color: var(--atop-3);
+			font-size: 0;
+			aspect-ratio: 1;
+
+			position: relative;
+
+			&::after {
+				content: " ";
+				display: block;
+				position: absolute;
+				width: 1rem;
+				height: 1rem;
+				left: 50%;
+				top: 50%;
+				translate: -50% -50%;
+				background-color: currentColor;
+				mask: url(assets/icons/home.svg) no-repeat center;
+				mask-size: cover;
+			}
+		}
+
+		&.current {
+			background: var(--pal-8);
+			color: var(--atop-8);
+		}
+
+		&:hover {
+			background: var(--pal-4);
+			color: var(--atop-4);
+		}
+	}
 }
 
 body > main {
